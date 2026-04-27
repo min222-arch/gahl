@@ -57,25 +57,63 @@
     width: auto;
 }
 
-/* TEXT BLOCK */
-.company-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
+/* COMPANY NAME (DYNAMIC) */
 .company-text h2 {
     font-size: 17px;
     margin: 0;
     line-height: 1.2;
+    font-weight: 600;
+
+    background: linear-gradient(90deg, #ffffff, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    transition: 0.4s ease;
 }
 
+/* TAGLINE */
 .company-text p {
     font-size: 11px;
     margin: 0;
     line-height: 1.2;
+
+    color: #d4af37;
+    opacity: 0.9;
+    transition: 0.4s ease;
+
+}
+/* WHEN NAVBAR SCROLLS */
+.navbar.scrolled .company-text h2 {
+    background: none;
+    -webkit-text-fill-color: white;
 }
 
+.navbar.scrolled .company-text p {
+    color: #d4af37;
+    opacity: 1;
+}
+/* GLOW ON HERO */
+.navbar.transparent .company-text h2 {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+@media (max-width: 768px) {
+
+    .company-text h2 {
+        font-size: 14px;
+    }
+
+    .company-text p {
+        display: none; /* keep clean on phone */
+    }
+}
+.company-text h2 {
+    letter-spacing: 0.8px;
+}
+
+.company-text p {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
 /* NAV LINKS */
 nav {
     display: flex;
@@ -459,13 +497,23 @@ footer {
         display: block;
     }
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+nav {
+    flex-shrink: 0;
+}
 </style>
 
 </head>
 
 <body>
 
-<header class="navbar" id="navbar">
+<header class="navbar transparent" id="navbar">
 <div class="logo-section">
     <img src="png.png" alt="GAHL Logo">
 
