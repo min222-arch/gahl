@@ -28,9 +28,7 @@
     background: #0f2a1d; /* ✅ ONE CONSISTENT COLOR */
     box-sizing: border-box;
 }
-body {
-    padding-top: 80px; /* prevents overlap */
-}
+
 /* TRANSPARENT */
 .navbar.transparent {
     background: rgba(0,0,0,0.2);
@@ -153,9 +151,15 @@ nav a.active::after {
 }
 /* HERO */
 .hero {
-    height: 100vh;
-    background: url('hero.jpg') center/cover no-repeat;
     position: relative;
+    height: 100vh;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
 }
 
 .overlay {
@@ -164,19 +168,25 @@ nav a.active::after {
     height: 100%;
     background: rgba(0,0,0,0.5);
 }
-
 .hero-content {
     position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 800px;
-    margin: auto;
-}
+    z-index: 5;
 
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content {
+    position: relative;
+    top: -40px; /* 🔥 THIS centers it visually under navbar */
+}
 .hero h1 {
     font-size: 48px;
 }
@@ -300,18 +310,8 @@ footer {
     }
 }
 /* HERO */
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
 
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
-}
+
 
 /* SLIDES */
 .slides {
@@ -356,13 +356,31 @@ footer {
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 700;
+
+    background: linear-gradient(270deg, #ffffff, #d4af37, #ffffff);
+    background-size: 400% 400%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-content p {
-    margin-top: 10px;
-    font-size: 1.2rem;
-}
+    background: linear-gradient(270deg, #ffffff, #c9a646);
+    background-size: 300% 300%;
 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 8s ease infinite;
+}
 /* 📱 MOBILE FIX */
 @media (max-width: 768px) {
 
@@ -592,10 +610,19 @@ nav {
     transform: translateY(-3px);
 }
 .hero-content {
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(4px);
-    border-radius: 12px;
-    display: inline-block;
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 @media (max-width: 768px) {
     .hero-buttons {
