@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GAHL - Global Agri Harvest Ltd</title>
 <link rel="stylesheet" href="stylehome.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Google Font -->
 <style>
     body {
@@ -1031,6 +1032,204 @@ nav {
         height: 120px !important;
     }
 }
+/* FOOTER */
+/* FOOTER BASE */
+.footer {
+    position: relative;
+    background: #0f2a1d;
+    color: white;
+    overflow: hidden;
+}
+
+/* CURVE */
+.footer-curve svg {
+    width: 100%;
+    height: 80px;
+}
+
+/* CONTAINER */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 20px;
+}
+
+/* COLUMN */
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* HEADINGS */
+.footer-col h3,
+.footer-col h4 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+/* LINKS */
+.footer-col a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    color: #d4af37;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter input {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    flex: 1;
+}
+
+.newsletter button {
+    background: #d4af37;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* MAP */
+.map iframe {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #d4af37;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.map-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* SOCIAL */
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a:hover {
+    background: #d4af37;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* GLOW EFFECT */
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212,175,55,0.2), transparent);
+    top: -100px;
+    left: -100px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+.footer::before {
+    animation: glowMove 8s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(60px, 40px);
+    }
+}
+.social-icons a {
+    animation: pulseIcon 3s infinite;
+}
+
+@keyframes pulseIcon {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(212,175,55,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0);
+    }
+}
+.footer {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: footerFade 1s ease forwards;
+}
+
+@keyframes footerFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.footer-curve svg path {
+    animation: waveMove 6s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+    0% {
+        d: path("M0,80 C360,0 1080,160 1440,60 L1440,0 L0,0 Z");
+    }
+    100% {
+        d: path("M0,60 C360,120 1080,0 1440,80 L1440,0 L0,0 Z");
+    }
+}
 </style>
 
 </head>
@@ -1115,21 +1314,22 @@ nav {
         <!-- TEXT SIDE -->
       <div class="about-text">
 
-    <span class="tag">ABOUT US</span>
+    <span class="tag">WHY US</span>
 
     <h2>
         Rooted in Africa.<br>
-        <span>Exporting Excellence Globally</span>
+        <span>Exporting Exporting Agricultural Produe</span>
     </h2>
 
     <p class="lead">
-        Global Agri Harvest Ltd (GAHL) is a licensed Kenyan agricultural exporter redefining reliability in fresh produce.
+        Global Agri Harvest Ltd (GAHL) is a licensed Kenyan agricultural exporter redefining reliability in fresh produce sector.<br> We ar agile, forward thinking, and built on the foundation
+        of strict Global G.A.P and MRL Compliance.
     </p>
 
     <p>
-        We connect Kenya’s fertile farms to global markets through strict Global G.A.P. and MRL compliance.
+        We bridge the gap between Kenya's fertile small holder farms and the world's most discerning retails and wholesale buyers.
     </p>
-
+<h1>Key Highlights</h1>
     <div class="about-points">
         <div class="point">✔ Licensed AFA-HCD Exporter</div>
         <div class="point">✔ Fresh Herbs & Premium Spices</div>
@@ -1158,53 +1358,74 @@ nav {
     <span class="close-btn" id="closeViewer">&times;</span>
     <img id="viewerImg" src="">
 </div>
-<!-- STATS -->
-<section class="stats">
-    <div class="stat">
-       <h3 class="counter" data-target="100">0%</h3>
-        <p>Compliance Focus</p>
+
+
+<footer class="footer">
+
+    <!-- CURVED TOP -->
+<div class="footer-curve">
+    <svg viewBox="0 0 1440 120">
+        <path fill="#f5f5f5" d="M0,80 C360,0 1080,160 1440,60 L1440,0 L0,0 Z"></path>
+    </svg>
+</div>
+
+    <div class="footer-container">
+
+        <!-- COMPANY -->
+        <div class="footer-col">
+            <h3>Global Agri Harvest Ltd</h3>
+            <p>
+                Delivering premium agricultural exports from Kenya to global markets with reliability and excellence.
+            </p>
+
+            <!-- NEWSLETTER -->
+            <div class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><a href="tel:+254792474356">📞 +254 792 474 356</a></p>
+            <p><a href="mailto:info@gahl.co.ke">📧 info@gahl.co.ke</a></p>
+        </div>
+
+        <!-- OFFICE + MAP -->
+        <div class="footer-col">
+            <h4>Visit Us</h4>
+            <p>📍 Nairobi, Kenya</p>
+
+            <div class="map">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Nairobi%20Kenya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <a href="https://www.google.com/maps?q=Nairobi+Kenya" target="_blank" class="map-btn">
+                Get Directions →
+            </a>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
     </div>
 
-    <div class="stat">
-        <h3>Global</h3>
-        <p>Market Reach</p>
+    <div class="footer-bottom">
+        <p>© 2026 Global Agri Harvest Ltd. All rights reserved.</p>
     </div>
 
-    <div class="stat">
-        <h3>24/7</h3>
-        <p>Cold Chain Monitoring</p>
-    </div>
-
-    <div class="stat">
-        <h3>Trusted</h3>
-        <p>Supply Network</p>
-    </div>
-</section>
-
-<!-- PRODUCTS PREVIEW -->
-<section class="products fade-in">
-    <h2>Our Core Products</h2>
-
-    <div class="product-grid">
-        <div class="product">Basil</div>
-        <div class="product">Mint</div>
-        <div class="product">Rosemary</div>
-        <div class="product">Chives</div>
-        <div class="product">Oregano</div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-    <h2>Let’s Build a Reliable Supply Chain</h2>
-    <a href="contact.html" class="btn gold">Get in Touch</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Global Agri Harvest Ltd | Rooted in Africa. Growing Agricultural Exports.</p>
 </footer>
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/254792474356" class="whatsapp">💬</a>
 <script>
