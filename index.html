@@ -569,7 +569,12 @@ nav {
     overflow: hidden;
     animation: pulse 2s infinite;
 }
-
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 🔥 allows wrapping instead of cutting */
+    gap: 10px;
+}
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(212,175,55,0.7);
@@ -591,6 +596,17 @@ nav {
     backdrop-filter: blur(4px);
     border-radius: 12px;
     display: inline-block;
+}
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column; /* stack buttons */
+        align-items: center;
+    }
+
+    .btn {
+        width: 90%;
+        text-align: center;
+    }
 }
 </style>
 
