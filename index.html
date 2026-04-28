@@ -1538,7 +1538,17 @@ nav {
 <!-- WHATSAPP -->
 <a href="#" class="whatsapp" onclick="openChat()">💬</a>
 <script>
-    
+   let chatOpened = false;
+
+window.addEventListener("scroll", () => {
+    if (!chatOpened && window.scrollY > 300) {
+        chatOpened = true;
+
+        if (window.Tawk_API) {
+            Tawk_API.maximize();
+        }
+    }
+}); 
 let slides = document.querySelectorAll('.slide');
 let index = 0;
 
