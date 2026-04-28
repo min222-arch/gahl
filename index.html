@@ -713,31 +713,38 @@ nav {
 
 @media (max-width: 768px) {
 
-    .about-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+   .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* better spacing */
+    max-width: 1100px; /* 🔥 controls width */
+    margin: auto;
+}
 
     .about-text {
         width: 100%;
     }
 
     .about-images {
-        width: 100%;
+        max-width: 450px;
         margin-top: 20px;
 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 15px;
     }
 
     .about-images img {
         width: 100%;
-        height: 120px;
+        height: 140px;
         object-fit: cover;
         border-radius: 12px;
     }
+}
+.img1 {
+    grid-column: span 2;
+    height: 180px;
 }
 /* TEXT */
 /* SMALL TAG */
@@ -920,6 +927,108 @@ nav {
         font-size: 24px;
     }
 }
+@media (max-width: 768px) {
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-images {
+        width: 100%;
+        max-width: 100%; /* 🔥 full width on phone */
+        margin-top: 20px;
+    }
+
+    .about-images img {
+        height: 120px;
+    }
+}
+/* 🔥 NEW IMAGE SYSTEM (SAFE OVERRIDE) */
+.about-images-new {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 700px;
+
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 15px !important;
+}
+
+/* IMAGES */
+.about-images-new img {
+    width: 100% !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    transition: 0.3s ease;
+}
+
+/* FEATURE IMAGE */
+.about-images-new .img1 {
+    grid-column: span 3 !important;
+    height: 200px !important;
+}
+
+/* REMOVE OLD FLOAT EFFECT */
+.about-images-new .img {
+    animation: none !important;
+    position: static !important;
+}
+
+/* HOVER */
+.about-images-new img:hover {
+    transform: scale(1.05);
+}
+/* CENTER THE IMAGE BLOCK */
+.about-images-new {
+    margin: 40px auto 0 auto !important; /* 🔥 centers horizontally */
+    justify-content: center;
+}
+/* HOVER EFFECT (LIFT + ZOOM) */
+.about-images-new img:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+/* SOFT FLOAT (NOT CHAOTIC) */
+.about-images-new img {
+    animation: softFloat 6s ease-in-out infinite;
+}
+
+/* DELAYS FOR NATURAL FEEL */
+.about-images-new .img2 { animation-delay: 1s; }
+.about-images-new .img3 { animation-delay: 2s; }
+.about-images-new .img4 { animation-delay: 3s; }
+.about-images-new .img5 { animation-delay: 4s; }
+
+@keyframes softFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+@media (max-width: 768px) {
+
+    .about-images-new {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 100% !important;
+    }
+
+    .about-images-new .img1 {
+        grid-column: span 2 !important;
+        height: 160px !important;
+    }
+
+    .about-images-new img {
+        height: 120px !important;
+    }
+}
 </style>
 
 </head>
@@ -1029,7 +1138,7 @@ nav {
 </div>
 
         <!-- IMAGE SIDE -->
-      <div class="about-images">
+<div class="about-images about-images-new">
 
     <img src="https://i.pinimg.com/1200x/0a/ed/68/0aed68f5a61aebf3aebb16dbd8494e37.jpg" class="img img1">
     <img src="https://i.pinimg.com/1200x/2b/d0/fd/2bd0fda474cf21cc277d913665cacc7f.jpg" class="img img2">
