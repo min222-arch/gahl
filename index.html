@@ -949,38 +949,40 @@ nav {
     }
 }
 /* 🔥 NEW IMAGE SYSTEM (SAFE OVERRIDE) */
+/* 🔥 SCROLLABLE IMAGE ROW */
 .about-images-new {
-    margin-top: 30px;
-    width: 100%;
-    max-width: 700px;
+    display: flex !important;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px;
 
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 15px !important;
+    scroll-behavior: smooth;
 }
 
-/* IMAGES */
+/* HIDE SCROLLBAR (optional clean look) */
+.about-images-new::-webkit-scrollbar {
+    display: none;
+}
+
+/* EACH IMAGE */
 .about-images-new img {
-    width: 100% !important;
-    height: 140px !important;
-    object-fit: cover !important;
-    border-radius: 12px !important;
+    width: 220px;        /* 🔥 fixed width (no stretching) */
+    height: 160px;       /* balanced height */
+    
+    object-fit: cover;
+    border-radius: 12px;
+
+    flex-shrink: 0;
     transition: 0.3s ease;
 }
+@media (max-width: 768px) {
 
-/* FEATURE IMAGE */
-.about-images-new .img1 {
-    grid-column: span 3 !important;
-    height: 200px !important;
+    .about-images-new img {
+        width: 180px;
+        height: 130px;
+    }
 }
-
-/* REMOVE OLD FLOAT EFFECT */
-.about-images-new .img {
-    animation: none !important;
-    position: static !important;
-}
-
-/* HOVER */
+/* HOVER EFFECT */
 .about-images-new img:hover {
     transform: scale(1.05);
 }
