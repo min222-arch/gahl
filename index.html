@@ -1044,7 +1044,7 @@ nav {
 /* CURVE */
 .footer-curve svg {
     width: 100%;
-    height: 80px;
+    height: 60px;
 }
 
 /* CONTAINER */
@@ -1207,7 +1207,7 @@ nav {
     }
 }
 .footer {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(40px);
     animation: footerFade 1s ease forwards;
 }
@@ -1229,6 +1229,95 @@ nav {
     100% {
         d: path("M0,60 C360,120 1080,0 1440,80 L1440,0 L0,0 Z");
     }
+}
+.footer {
+    position: relative;
+    background: linear-gradient(120deg, #0f2a1d, #133726, #0f2a1d);
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
+
+    color: white;
+    padding: 0 40px 20px;
+    overflow: hidden;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.footer-col {
+    background: rgba(255,255,255,0.03);
+    padding: 15px;
+    border-radius: 12px;
+
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+
+.footer-col:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.06);
+}
+.social-icons a {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #d4af37, transparent);
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.social-icons a:hover::before {
+    opacity: 0.3;
+}
+
+.social-icons a:hover {
+    transform: translateY(-4px) scale(1.1);
+}
+.map iframe {
+    transition: 0.4s ease;
+}
+
+.map:hover iframe {
+    transform: scale(1.03);
+}
+.footer::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212,175,55,0.15), transparent);
+    bottom: -100px;
+    right: -100px;
+    animation: floatGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-40px, -30px); }
+}
+.footer-container {
+    padding: 25px 15px;
+    gap: 20px;
+}
+
+.map iframe {
+    height: 100px;
+}
+
+.newsletter input {
+    padding: 6px;
+}
+
+.newsletter button {
+    padding: 6px 10px;
 }
 </style>
 
@@ -1364,11 +1453,10 @@ nav {
 
     <!-- CURVED TOP -->
 <div class="footer-curve">
-    <svg viewBox="0 0 1440 120">
-        <path fill="#f5f5f5" d="M0,80 C360,0 1080,160 1440,60 L1440,0 L0,0 Z"></path>
+    <svg viewBox="0 0 1440 100">
+        <path fill="#f5f5f5" d="M0,60 C400,0 1040,120 1440,60 L1440,0 L0,0 Z"></path>
     </svg>
 </div>
-
     <div class="footer-container">
 
         <!-- COMPANY -->
