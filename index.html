@@ -19,13 +19,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 60px;
+    padding: 12px 40px;
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1000;
     transition: 0.4s ease;
+    box-sizing: border-box; /* 🔥 FIX OVERFLOW */
 }
-
+body {
+    padding-top: 80px; /* prevents overlap */
+}
 /* TRANSPARENT */
 .navbar.transparent {
     background: rgba(0,0,0,0.2);
@@ -162,10 +167,14 @@ nav a.active::after {
 
 .hero-content {
     position: relative;
+    z-index: 2;
     color: white;
     text-align: center;
+    padding: 20px;
     top: 50%;
     transform: translateY(-50%);
+    max-width: 800px;
+    margin: auto;
 }
 
 .hero h1 {
@@ -205,7 +214,10 @@ nav a.active::after {
     justify-content: space-around;
     background: #1f3d2b;
     color: white;
-    padding: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap; /* 🔥 allows wrapping */
+    gap: 20px;
+    text-align: center;
 }
 
 .stat h3 {
@@ -217,11 +229,17 @@ nav a.active::after {
     padding: 60px;
     text-align: center;
 }
+.product {
+    background: white;
+    padding: 20px;
+    width: 140px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
 
-.product-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.product:hover {
+    transform: translateY(-5px);
 }
 
 .product {
@@ -255,7 +273,15 @@ footer {
     padding: 15px;
     border-radius: 50%;
 }
+@media (max-width: 768px) {
+    .logo-section {
+        gap: 10px;
+    }
 
+    .logo-section img {
+        height: 45px;
+    }
+}
 /* ANIMATION */
 .fade-in {
     opacity: 0;
