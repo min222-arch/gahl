@@ -277,10 +277,31 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: green;
-    color: white;
-    padding: 15px;
+
+    width: 55px;
+    height: 55px;
+
     border-radius: 50%;
+    background: #d4af37;
+    color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    z-index: 1000;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.whatsapp {
+    animation: pulseChat 2.5s infinite;
+}
+
+@keyframes pulseChat {
+    0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(212,175,55,0); }
+    100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
 }
 @media (max-width: 768px) {
     .logo-section {
@@ -1340,6 +1361,23 @@ nav {
 #tawkchat-container {
     display: none !important;
 }
+.chat-hint {
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+
+    background: white;
+    color: black;
+
+    padding: 6px 10px;
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+    animation: fadeIn 1s ease;
+}
 </style>
 
 </head>
@@ -1535,20 +1573,27 @@ nav {
     </div>
 
 </footer>
+<div class="chat-hint">Need help?</div>
 <!-- WHATSAPP -->
 <a href="#" class="whatsapp" onclick="openChat()">💬</a>
 <script>
-   let chatOpened = false;
+  let chatOpened = false;
 
+// OPEN ON SCROLL
 window.addEventListener("scroll", () => {
     if (!chatOpened && window.scrollY > 300) {
         chatOpened = true;
-
-        if (window.Tawk_API) {
-            Tawk_API.maximize();
-        }
+        openChat();
     }
-}); 
+});
+
+// FALLBACK TIMER
+setTimeout(() => {
+    if (!chatOpened) {
+        chatOpened = true;
+        openChat();
+    }
+}, 8000);
 let slides = document.querySelectorAll('.slide');
 let index = 0;
 
@@ -1634,7 +1679,7 @@ viewer.addEventListener("click", (e) => {
 <script>
 function openChat() {
     if (window.Tawk_API) {
-        Tawk_API.maximize();
+        Tawk_API.minimize();
     } else {
         setTimeout(openChat, 500);
     }
