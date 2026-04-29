@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="stylehome.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="navbar.css">
 <!-- Google Font -->
 <style>
     body {
@@ -1555,7 +1556,7 @@ nav {
     <img src="png.png" alt="GAHL Logo">
 
     <div class="company-text">
-        <h2>Global Agri Harvest Ltd</h2>
+        <h3>Global Agri Harvest Ltd</h3>
      
     </div>
 </div>
@@ -1847,7 +1848,7 @@ viewer.addEventListener("click", (e) => {
 <script>
 function openChat() {
     if (window.Tawk_API) {
-        Tawk_API.maxmize();
+        Tawk_API.maximize();
     } else {
         setTimeout(openChat, 500);
     }
@@ -1866,6 +1867,15 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
 </script>
 </body>
 </html>
