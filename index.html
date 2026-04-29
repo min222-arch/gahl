@@ -682,10 +682,12 @@ nav {
 }
 /* TAGLINE SCROLL BAR */
 .tagline-bar {
-    position: absolute;
-    bottom: 5px;
+    position: fixed; /* 🔥 not absolute */
+    top: 80px; /* below navbar */
     left: 0;
     width: 100%;
+
+    z-index: 999;
 
     overflow: hidden;
     white-space: nowrap;
@@ -693,7 +695,11 @@ nav {
     background: rgba(0,0,0,0.3);
     backdrop-filter: blur(5px);
 }
-
+@media (max-width: 768px) {
+    .tagline-bar {
+        top: 60px; /* slightly lower for small navbar */
+    }
+}
 .tagline-bar span {
     display: inline-block;
     padding-left: 100%;
@@ -1545,6 +1551,66 @@ nav {
         width: 60%;
     }
 }
+.about-images-new {
+    position: relative;
+}
+
+/* LEFT FADE */
+.about-images-new::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+
+    background: linear-gradient(to right, white, transparent);
+    z-index: 2;
+}
+
+/* RIGHT FADE */
+.about-images-new::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+
+    background: linear-gradient(to left, white, transparent);
+    z-index: 2;
+}
+.scroll-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+
+    animation: fadeHint 2s infinite;
+}
+
+@keyframes fadeHint {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+.scroll-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 20px;
+    color: #d4af37;
+
+    animation: moveArrow 1.5s infinite;
+    z-index: 3;
+}
+
+@keyframes moveArrow {
+    0% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(8px); }
+    100% { transform: translateY(-50%) translateX(0); }
+}
 </style>
 
 </head>
@@ -1573,11 +1639,11 @@ nav {
     <span></span>
     <span></span>
 </div>
+
+</header>
 <div class="tagline-bar">
     <span>Rooted in Africa • Exporting Agricultural Produce • Global Quality Supply</span>
 </div>
-</header>
-
 <section class="hero">
 <div class="slides">
 
@@ -1656,7 +1722,8 @@ nav {
 
         <!-- IMAGE SIDE -->
 <div class="about-images about-images-new">
-
+<div class="scroll-arrow">→</div>
+<div class="scroll-hint">← Swipe to explore →</div>
     <img src="https://i.pinimg.com/1200x/0a/ed/68/0aed68f5a61aebf3aebb16dbd8494e37.jpg" class="img img1">
     <img src="https://i.pinimg.com/1200x/2b/d0/fd/2bd0fda474cf21cc277d913665cacc7f.jpg" class="img img2">
     <img src="https://i.pinimg.com/736x/d0/c2/cc/d0c2cc9036d99c1ab5dd03790e71b459.jpg" class="img img3">
