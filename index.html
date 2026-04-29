@@ -1446,6 +1446,29 @@ nav {
         width: 100%;
     }
 }
+@media (max-width: 768px) {
+
+    /* CENTER THE WHOLE CONTAINER */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* FIX CARD WIDTH (THIS IS THE KEY) */
+    .footer-col {
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+}
 </style>
 
 </head>
@@ -1643,6 +1666,8 @@ nav {
 </footer>
 <div class="chat-hint">Need help?</div>
 <!-- WHATSAPP -->
+ <br>
+ <br>
 <a href="#" class="whatsapp" onclick="openChat()">💬</a>
 <script>
   let chatOpened = false;
@@ -1747,7 +1772,7 @@ viewer.addEventListener("click", (e) => {
 <script>
 function openChat() {
     if (window.Tawk_API) {
-        Tawk_API.minimize();
+        Tawk_API.maxmize();
     } else {
         setTimeout(openChat, 500);
     }
