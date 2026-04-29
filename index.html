@@ -1378,6 +1378,59 @@ nav {
 
     animation: fadeIn 1s ease;
 }
+@media (max-width: 768px) {
+
+    /* FORCE FULL CENTER */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* EACH COLUMN */
+    .footer-col {
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+    }
+
+    /* NEWSLETTER FIX */
+    .newsletter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter input {
+        width: 100%;
+        text-align: center;
+    }
+
+    .newsletter button {
+        width: 60%;
+    }
+
+    /* MAP CENTER */
+    .map {
+        display: flex;
+        justify-content: center;
+    }
+
+    .map iframe {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* BUTTON CENTER */
+    .map-btn {
+        display: inline-block;
+        margin: 10px auto 0 auto;
+    }
+
+    /* SOCIAL ICONS CENTER */
+    .social-icons {
+        justify-content: center;
+    }
+}
 </style>
 
 </head>
