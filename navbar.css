@@ -1,0 +1,121 @@
+/* NAVBAR BASE */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 12px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(15, 42, 29, 0.85);
+    backdrop-filter: blur(12px);
+
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+/* SCROLL EFFECT */
+.navbar.scrolled {
+    background: rgba(15, 42, 29, 1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* LOGO */
+.logo-section img {
+    height: 55px;
+}
+
+/* COMPANY TEXT */
+.company-text h3 {
+    font-size: 16px;
+    font-weight: 600;
+
+    background: linear-gradient(90deg, #fff, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* NAV LINKS */
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    position: relative;
+    transition: 0.3s;
+}
+
+/* GLOW HOVER */
+nav a:hover {
+    color: #d4af37;
+}
+
+/* UNDERLINE ANIMATION */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ACTIVE LINK */
+nav a.active {
+    color: #d4af37;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+
+        background: rgba(15, 42, 29, 0.95);
+        backdrop-filter: blur(10px);
+
+        flex-direction: column;
+        align-items: center;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s ease;
+    }
+
+    nav.show {
+        max-height: 300px;
+        padding: 20px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+    }
+}
