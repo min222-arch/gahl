@@ -32,14 +32,13 @@
 }
 
 /* TRANSPARENT */
-.navbar.transparent {
-    background: rgba(0,0,0,0.2);
-    backdrop-filter: blur(6px);
+.navbar.transparent{
+    background:#ffffff;
 }
 
 /* SCROLL */
-.navbar.scrolled {
-    background: #0f2a1d;
+.navbar.scrolled{
+    background:#ffffff;
 }
 
 /* LOGO SECTION */
@@ -63,44 +62,55 @@
 }
 
 /* COMPANY NAME (DYNAMIC) */
-.company-text h2 {
-    font-size: 17px;
-    margin: 0;
-    line-height: 1.2;
-    font-weight: 600;
-
-    background: linear-gradient(90deg, #ffffff, #d4af37);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    transition: 0.4s ease;
+.company-text h3{
+    font-size:22px;
+    margin:0;
+    line-height:1.2;
+    font-weight:700;
+    color:#1f2937;
+    letter-spacing:.5px;
 }
 
 /* TAGLINE */
-.company-text p {
-    font-size: 11px;
-    margin: 0;
-    line-height: 1.2;
-
-    color: #d4af37;
-    opacity: 0.9;
-    transition: 0.4s ease;
-
-}
-/* WHEN NAVBAR SCROLLS */
-.navbar.scrolled .company-text h2 {
-    background: none;
-    -webkit-text-fill-color: white;
+.company-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
-.navbar.scrolled .company-text p {
-    color: #d4af37;
-    opacity: 1;
+.company-text h3{
+    margin:0 !important;
+    padding:0 !important;
+
+    color:#0B5D3B !important;   /* Solid green */
+    font-size:24px !important;
+    font-weight:800 !important;
+    font-family:Arial, Helvetica, sans-serif !important;
+
+    line-height:1.2 !important;
+    letter-spacing:0.5px !important;
+
+    background:none !important;
+    -webkit-background-clip:initial !important;
+    -webkit-text-fill-color:#0B5D3B !important;
+    text-shadow:none !important;
+    opacity:1 !important;
 }
+
+.company-text p{
+    margin-top:4px;
+    font-size:12px;
+    font-weight:600;
+
+    color:#B8860B;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+
+
 /* GLOW ON HERO */
-.navbar.transparent .company-text h2 {
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
+
 @media (max-width: 768px) {
 
     .company-text h2 {
@@ -109,14 +119,7 @@
 
     
 }
-.company-text h2 {
-    letter-spacing: 0.8px;
-}
 
-.company-text p {
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
 /* NAV LINKS */
 nav {
     display: flex;
@@ -125,12 +128,11 @@ nav {
     flex-wrap: nowrap;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    position: relative;
-    white-space: nowrap;
+nav a{
+    color:#1f2937;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
 }
 
 /* HOVER LINE */
@@ -309,9 +311,28 @@ footer {
         gap: 10px;
     }
 
-    .logo-section img {
-        height: 45px;
-    }
+    .logo-section img{
+    width:72px;
+    height:72px;
+    object-fit:contain;
+    display:block;
+
+    image-rendering:auto;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,255,255,.25))
+        drop-shadow(0 0 18px rgba(212,175,55,.45));
+}
+}
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-shrink:0;
+}
+
+.logo-section img{
+    flex-shrink:0;
 }
 /* ANIMATION */
 .fade-in {
@@ -543,7 +564,7 @@ footer {
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background: white;
+   background:#1f2937;
     transition: 0.4s;
 }
 
@@ -601,13 +622,22 @@ footer {
         display: flex;
     }
 }
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-}
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    box-sizing:border-box;
 
+    background:#ffffff;
+    border-bottom:1px solid #e5e7eb;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
 nav {
     flex-shrink: 0;
 }
@@ -1619,7 +1649,7 @@ nav {
 
 <header class="navbar transparent" id="navbar">
 <div class="logo-section">
-    <img src="png.png" alt="GAHL Logo">
+    <img src="gahl_logo-removebg-preview (1).png" alt="GAHL Logo">
 
     <div class="company-text">
         <h3>Global Agri Harvest Ltd</h3>
@@ -1676,8 +1706,11 @@ nav {
     <!-- CONTENT -->
     <div class="hero-content">
         <h1 class="animate-text">Premium Kenyan Horticulture</h1>
+        <br>
+        <br>
         <p class="animate-text delay">Uncompromising Compliance. Global Supply Excellence.</p>
-
+<br>
+<br>
         <div class="hero-buttons animate-text delay2">
             <a href="products.html" class="btn gold">Explore Products</a>
             <a href="contact.html" class="btn outline">Partner With Us</a>
@@ -1723,13 +1756,13 @@ nav {
         <!-- IMAGE SIDE -->
 <div class="about-images about-images-new">
 <div class="scroll-arrow">→</div>
-<div class="scroll-hint">← Swipe to explore →</div>
+
     <img src="https://i.pinimg.com/1200x/0a/ed/68/0aed68f5a61aebf3aebb16dbd8494e37.jpg" class="img img1">
     <img src="https://i.pinimg.com/1200x/2b/d0/fd/2bd0fda474cf21cc277d913665cacc7f.jpg" class="img img2">
     <img src="https://i.pinimg.com/736x/d0/c2/cc/d0c2cc9036d99c1ab5dd03790e71b459.jpg" class="img img3">
     <img src="https://i.pinimg.com/1200x/de/9b/27/de9b27df9ff5dc7bab4bd8ebb5d9fd3a.jpg" class="img img4">
     <img src="https://i.pinimg.com/736x/15/a9/a2/15a9a2cb2215d50c6848e101d15a0705.jpg" class="img img5">
-
+<div class="scroll-hint">← Swipe to explore →</div>
 </div>
 
     </div>
