@@ -600,13 +600,22 @@ footer {
         border-radius: 0 0 15px 15px;
     }
 
-    nav a {
-        padding: 15px;
-        font-size: 16px;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: 0.3s;
-    }
+  nav a{
+    color:#ffffff !important;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    width:100%;
+    text-align:center;
+    padding:15px 0;
+    transition:0.3s ease;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d4af37 !important;
+    background:rgba(255,255,255,0.08);
+}
 
     nav.show {
         max-height: 300px;
