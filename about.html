@@ -1,0 +1,3429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAHL - Global Agri Harvest Ltd</title>
+<link rel="stylesheet" href="stylehome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="navbar.css">
+<!-- Google Font -->
+<style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background: #0f2a1d; /* ✅ ONE CONSISTENT COLOR */
+    box-sizing: border-box;
+}
+
+/* TRANSPARENT */
+.navbar.transparent{
+    background:#ffffff;
+}
+
+/* SCROLL */
+.navbar.scrolled{
+    background:#ffffff;
+}
+
+/* LOGO SECTION */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 50%;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* 👈 THIS fixes spacing */
+    flex-shrink: 0;
+}
+
+.logo-section img {
+    height: 60px;
+    width: auto;
+}
+
+/* COMPANY NAME (DYNAMIC) */
+.company-text h3{
+    font-size:22px;
+    margin:0;
+    line-height:1.2;
+    font-weight:700;
+    color:#1f2937;
+    letter-spacing:.5px;
+}
+
+/* TAGLINE */
+.company-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.company-text h3{
+    margin:0 !important;
+    padding:0 !important;
+
+    color:#0B5D3B !important;   /* Solid green */
+    font-size:16px !important;
+    font-weight:800 !important;
+    font-family:Arial, Helvetica, sans-serif !important;
+
+    line-height:1.2 !important;
+    letter-spacing:0.5px !important;
+
+    background:none !important;
+    -webkit-background-clip:initial !important;
+    -webkit-text-fill-color:#0B5D3B !important;
+    text-shadow:none !important;
+    opacity:1 !important;
+}
+
+.company-text p{
+    margin-top:4px;
+    font-size:12px;
+    font-weight:600;
+
+    color:#B8860B;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+
+
+/* GLOW ON HERO */
+
+@media (max-width: 768px) {
+
+    .company-text h2 {
+        font-size: 14px;
+    }
+
+    
+}
+
+/* NAV LINKS */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: nowrap;
+}
+
+nav a{
+    color:#1f2937;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+}
+
+/* HOVER LINE */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content {
+    position: relative;
+    top: -40px; /* 🔥 THIS centers it visually under navbar */
+}
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.gold {
+    background: #c9a646;
+    color: white;
+}
+
+.outline {
+    border: 1px solid white;
+    color: white;
+}
+
+/* INTRO */
+.intro {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #1f3d2b;
+    color: white;
+    padding: 40px 20px;
+    flex-wrap: wrap; /* 🔥 allows wrapping */
+    gap: 20px;
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 28px;
+}
+
+/* PRODUCTS */
+.products {
+    padding: 60px;
+    text-align: center;
+}
+.product {
+    background: white;
+    padding: 20px;
+    width: 140px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    width: 120px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* CTA */
+.cta {
+    background: #1f3d2b;
+    color: white;
+    text-align: center;
+    padding: 60px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+    background: #d4af37;
+    color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    z-index: 1000;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.whatsapp {
+    animation: pulseChat 2.5s infinite;
+}
+
+@keyframes pulseChat {
+    0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(212,175,55,0); }
+    100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+}
+@media (max-width: 768px) {
+    .logo-section {
+        gap: 10px;
+    }
+
+    .logo-section img{
+    width:72px;
+    height:72px;
+    object-fit:contain;
+    display:block;
+
+    image-rendering:auto;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,255,255,.25))
+        drop-shadow(0 0 18px rgba(212,175,55,.45));
+}
+}
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-shrink:0;
+}
+
+.logo-section img{
+    flex-shrink:0;
+}
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* HERO */
+
+
+
+/* SLIDES */
+.slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+/* GRADIENT LIGHT */
+.gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(212,175,55,0.25), transparent 60%);
+}
+
+/* CONTENT */
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+
+    background: linear-gradient(270deg, #ffffff, #d4af37, #ffffff);
+    background-size: 400% 400%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-content p {
+    background: linear-gradient(270deg, #ffffff, #c9a646);
+    background-size: 300% 300%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 8s ease infinite;
+}
+/* 📱 MOBILE FIX */
+@media (max-width: 768px) {
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* 🔥 smaller */
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+
+/* BUTTONS */
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn.gold {
+    background: #d4af37;
+    color: black;
+}
+
+.btn.gold:hover {
+    background: #b8962e;
+}
+
+.btn.outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn.outline:hover {
+    background: white;
+    color: black;
+}
+
+/* TEXT ANIMATION */
+.animate-text {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+}
+
+.delay { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLL INDICATOR */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 25px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+    transform: translateX(-50%);
+}
+
+.scroll-down::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: scrollAnim 1.5s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { top: 8px; opacity: 1; }
+    100% { top: 20px; opacity: 0; }
+}
+/* PREVENT OVERFLOW */
+.navbar {
+    box-sizing: border-box;
+}
+
+/* BIG SCREENS FIX */
+@media (min-width: 1024px) {
+    nav {
+        gap: 35px;
+    }
+}
+
+/* SMALL LAPTOP FIX */
+@media (max-width: 768px) {
+
+    .company-text {
+        width: 140px; /* adjust if needed */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .company-text p {
+        display: block;
+        position: absolute;
+        white-space: nowrap;
+
+        animation: scrollText 12s linear infinite;
+    }
+
+    @keyframes scrollText {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
+/* HAMBURGER ICON */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+   background:#1f2937;
+    transition: 0.4s;
+}
+
+/* ANIMATION TO X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(15, 42, 29, 0.95);
+        backdrop-filter: blur(10px);
+
+        flex-direction: column;
+        align-items: center;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: all 0.5s ease;
+        border-radius: 0 0 15px 15px;
+    }
+
+  nav a{
+    color:#ffffff !important;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    width:100%;
+    text-align:center;
+    padding:15px 0;
+    transition:0.3s ease;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d4af37 !important;
+    background:rgba(255,255,255,0.08);
+}
+
+    nav.show {
+        max-height: 300px;
+        padding: 20px 0;
+    }
+
+    nav.show a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    box-sizing:border-box;
+
+    background:#ffffff;
+    border-bottom:1px solid #e5e7eb;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+nav {
+    flex-shrink: 0;
+}
+.hero-content h1,
+.hero-content p {
+    transition: opacity 0.5s ease;
+}
+/* BUTTON PULSE */
+.btn.gold {
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+@media (max-width: 768px) {
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 220px; /* 🔥 fixed width for perfect alignment */
+        text-align: center;
+    }
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(212,175,55,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0);
+    }
+}
+
+/* HOVER LIFT */
+.btn:hover {
+    transform: translateY(-3px);
+}
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column; /* stack buttons */
+        align-items: center;
+    }
+
+    .btn {
+        width: 90%;
+        text-align: center;
+    }
+}
+/* TAGLINE SCROLL BAR */
+.tagline-bar{
+    position:fixed;
+    top:80px;
+    left:0;
+    width:100%;
+    height:32px;
+    overflow:hidden;
+    background:rgba(15,42,29,.85);
+    z-index:999;
+    display:flex;
+    align-items:center;
+}
+
+.tagline-bar span{
+    display:inline-block;
+    white-space:nowrap;
+    color:#d4af37;
+    font-size:13px;
+    font-weight:600;
+    padding-left:100%;
+    animation:marquee 18s linear infinite;
+}
+
+@keyframes marquee{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-200%);
+    }
+}
+
+@media (max-width:768px){
+    .tagline-bar{
+        top:72px;
+        height:30px;
+    }
+
+    .tagline-bar span{
+        font-size:11px;
+        animation:marquee 15s linear infinite;
+    }
+}
+@media (max-width: 768px) {
+    .tagline-bar {
+        top: 60px; /* slightly lower for small navbar */
+    }
+}
+.tagline-bar span {
+    display: inline-block;
+    padding-left: 100%;
+
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@media (max-width: 768px) {
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        top: 0; /* 🔥 remove offset */
+        width: 100%;
+        padding: 0 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        text-align: center;
+    }
+
+    .hero p {
+        text-align: center;
+    }
+}
+.about-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+@media (max-width: 768px) {
+
+   .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* better spacing */
+    max-width: 1100px; /* 🔥 controls width */
+    margin: auto;
+}
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-images {
+        max-width: 450px;
+        margin-top: 20px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .about-images img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+}
+.img1 {
+    grid-column: span 2;
+    height: 180px;
+}
+/* TEXT */
+/* SMALL TAG */
+.about-text .tag {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+/* HEADING */
+.about-text h2 {
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.about-text h2 span {
+    color: #d4af37;
+}
+
+/* LEAD TEXT */
+.about-text .lead {
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+/* NORMAL TEXT */
+.about-text p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* POINTS GRID */
+.about-points {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* EACH POINT */
+.point {
+    background: rgba(31,61,43,0.05);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.point:hover {
+    background: #1f3d2b;
+    color: white;
+    transform: translateY(-3px);
+}
+/* IMAGES */
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.about-images img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* POSITION EACH IMAGE */
+/* LEFT SIDE */
+/* LEFT SIDE (closer to text) */
+
+
+/* FLOATING ANIMATION */
+.about-images .img {
+    animation: float 6s ease-in-out infinite;
+}
+
+.img2 { animation-delay: 1s; }
+.img3 { animation-delay: 2s; }
+.img4 { animation-delay: 3s; }
+.img5 { animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* HOVER EFFECT */
+.about-images .img:hover {
+    transform: scale(1.08) rotate(1deg);
+    z-index: 10;
+}
+@media (max-width: 768px) {
+
+    .about-images {
+        position: relative;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .about-images .img {
+        position: static;
+        width: 100%;
+        animation: none; /* cleaner on phone */
+    }
+}
+/* FULLSCREEN VIEWER */
+.image-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.image-viewer img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+.image-viewer img {
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.about-text {
+    animation: fadeLeft 1s ease forwards;
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 768px) {
+
+    .about-points {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+    }
+}
+@media (max-width: 768px) {
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-images {
+        width: 100%;
+        max-width: 100%; /* 🔥 full width on phone */
+        margin-top: 20px;
+    }
+
+    .about-images img {
+        height: 120px;
+    }
+}
+/* 🔥 NEW IMAGE SYSTEM (SAFE OVERRIDE) */
+/* 🔥 SCROLLABLE IMAGE ROW */
+.about-images-new {
+    display: flex !important;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px;
+
+    scroll-behavior: smooth;
+}
+
+/* HIDE SCROLLBAR (optional clean look) */
+.about-images-new::-webkit-scrollbar {
+    display: none;
+}
+
+/* EACH IMAGE */
+.about-images-new img {
+    width: 220px;        /* 🔥 fixed width (no stretching) */
+    height: 160px;       /* balanced height */
+    
+    object-fit: cover;
+    border-radius: 12px;
+
+    flex-shrink: 0;
+    transition: 0.3s ease;
+}
+@media (max-width: 768px) {
+
+    .about-images-new img {
+        width: 180px;
+        height: 130px;
+    }
+}
+/* HOVER EFFECT */
+.about-images-new img:hover {
+    transform: scale(1.05);
+}
+/* CENTER THE IMAGE BLOCK */
+.about-images-new {
+    margin: 40px auto 0 auto !important; /* 🔥 centers horizontally */
+    justify-content: center;
+}
+/* HOVER EFFECT (LIFT + ZOOM) */
+.about-images-new img:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+/* SOFT FLOAT (NOT CHAOTIC) */
+.about-images-new img {
+    animation: softFloat 6s ease-in-out infinite;
+}
+
+/* DELAYS FOR NATURAL FEEL */
+.about-images-new .img2 { animation-delay: 1s; }
+.about-images-new .img3 { animation-delay: 2s; }
+.about-images-new .img4 { animation-delay: 3s; }
+.about-images-new .img5 { animation-delay: 4s; }
+
+@keyframes softFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+@media (max-width: 768px) {
+
+    .about-images-new {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 100% !important;
+    }
+
+    .about-images-new .img1 {
+        grid-column: span 2 !important;
+        height: 160px !important;
+    }
+
+    .about-images-new img {
+        height: 120px !important;
+    }
+}
+/* FOOTER */
+/* FOOTER BASE */
+.footer {
+    position: relative;
+    background: #0f2a1d;
+    color: white;
+    overflow: hidden;
+}
+
+/* CURVE */
+.footer-curve svg {
+    width: 100%;
+    height: 60px;
+}
+
+/* CONTAINER */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 20px;
+}
+
+/* COLUMN */
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* HEADINGS */
+.footer-col h3,
+.footer-col h4 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+/* LINKS */
+.footer-col a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    color: #d4af37;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter input {
+    background: rgba(255,255,255,0.1);
+    color: white;
+
+    border-radius: 30px;
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.newsletter input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.newsletter button {
+    background: linear-gradient(135deg, #d4af37, #b8962e);
+    color: black;
+
+    font-weight: 600;
+    border-radius: 30px;
+
+    transition: all 0.3s ease;
+}
+
+.newsletter button:hover {
+    transform: scale(1.05);
+}
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* MAP */
+.map iframe {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #d4af37;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.map-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* SOCIAL */
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a:hover {
+    background: #d4af37;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* GLOW EFFECT */
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212,175,55,0.2), transparent);
+    top: -100px;
+    left: -100px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+.footer::before {
+    animation: glowMove 8s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(60px, 40px);
+    }
+}
+.social-icons a {
+    animation: pulseIcon 3s infinite;
+}
+
+@keyframes pulseIcon {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(212,175,55,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0);
+    }
+}
+.footer {
+    opacity: 1;
+    transform: translateY(40px);
+    animation: footerFade 1s ease forwards;
+}
+
+@keyframes footerFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.footer-curve svg path {
+    animation: waveMove 6s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+    0% {
+        d: path("M0,80 C360,0 1080,160 1440,60 L1440,0 L0,0 Z");
+    }
+    100% {
+        d: path("M0,60 C360,120 1080,0 1440,80 L1440,0 L0,0 Z");
+    }
+}
+.footer {
+    position: relative;
+    background: linear-gradient(120deg, #0f2a1d, #133726, #0f2a1d);
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
+
+    color: white;
+    padding: 0 40px 20px;
+    overflow: hidden;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.footer-col {
+    background: rgba(255,255,255,0.05);
+    padding: 18px;
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    transition: all 0.4s ease;
+}
+
+.footer-col:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.06);
+}
+.footer-col:hover {
+    transform: translateY(-6px) scale(1.02);
+
+    box-shadow: 
+        0 20px 50px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+}
+@media (max-width: 768px) {
+    .footer-col {
+        width: 88%;
+        max-width: 320px;
+        margin: 12px auto;
+    }
+}
+.footer-col h3,
+.footer-col h4 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+.social-icons a {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #d4af37, transparent);
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.social-icons a:hover::before {
+    opacity: 0.3;
+}
+
+.social-icons a:hover {
+    transform: translateY(-4px) scale(1.1);
+}
+.map iframe {
+    transition: 0.4s ease;
+}
+
+.map:hover iframe {
+    transform: scale(1.03);
+}
+.footer::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212,175,55,0.15), transparent);
+    bottom: -100px;
+    right: -100px;
+    animation: floatGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-40px, -30px); }
+}
+.footer-container {
+    padding: 25px 15px;
+    gap: 20px;
+}
+
+.map iframe {
+    height: 100px;
+}
+
+.newsletter input {
+    padding: 6px;
+}
+
+.newsletter button {
+    padding: 6px 10px;
+}
+.footer-chat {
+    margin-top: 15px;
+}
+
+.footer-chat button {
+    background: #d4af37;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.footer-chat button:hover {
+    background: #b8962e;
+    transform: translateY(-2px);
+}
+#tawkchat-container {
+    display: none !important;
+}
+.chat-hint {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+
+    background: white;
+    color: black;
+
+    padding: 6px 10px;
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+    animation: fadeIn 1s ease;
+}
+@media (max-width: 768px) {
+
+    /* FORCE TRUE CENTERING */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* MAKE EACH BLOCK CENTERED */
+    .footer-col {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* FORCE ALL TEXT CENTER */
+    .footer-col p,
+    .footer-col a,
+    .footer-col h3,
+    .footer-col h4 {
+        text-align: center !important;
+    }
+
+    /* NEWSLETTER PERFECT CENTER */
+    .newsletter {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 100%;
+        text-align: center;
+    }
+
+    .newsletter button {
+        width: 70%;
+    }
+
+    /* MAP PERFECT CENTER */
+    .map {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .map iframe {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* BUTTON CENTER */
+    .map-btn {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    /* SOCIAL CENTER */
+    .social-icons {
+        justify-content: center;
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+
+    /* CENTER THE WHOLE CONTAINER */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* FIX CARD WIDTH (THIS IS THE KEY) */
+    .footer-col {
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter {
+        flex-direction: column; /* 🔥 stack neatly */
+        align-items: center;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+
+    .newsletter button {
+        width: 60%;
+    }
+}
+.about-images-new {
+    position: relative;
+}
+
+/* LEFT FADE */
+.about-images-new::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+
+    background: linear-gradient(to right, white, transparent);
+    z-index: 2;
+}
+
+/* RIGHT FADE */
+.about-images-new::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+
+    background: linear-gradient(to left, white, transparent);
+    z-index: 2;
+}
+.scroll-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+
+    animation: fadeHint 2s infinite;
+}
+
+@keyframes fadeHint {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+.scroll-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 20px;
+    color: #d4af37;
+
+    animation: moveArrow 1.5s infinite;
+    z-index: 3;
+}
+
+@keyframes moveArrow {
+    0% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(8px); }
+    100% { transform: translateY(-50%) translateX(0); }
+}
+/* WHY US */
+
+.why-us{
+
+padding:90px 20px;
+
+background:linear-gradient(135deg,#f8faf8,#eef7f1);
+
+overflow:hidden;
+
+}
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.section-title span{
+
+color:#c8a43f;
+
+letter-spacing:2px;
+
+font-size:14px;
+
+font-weight:700;
+
+}
+
+.section-title h2{
+
+font-size:40px;
+
+color:#123524;
+
+margin:15px 0;
+
+}
+
+.section-title p{
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+/* HERO */
+
+.about-hero{
+
+height:80vh;
+
+background:url("https://i.pinimg.com/1200x/29/51/fb/2951fba4cd2c2c25fba446e96506f581.jpg") center/cover;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+.about-overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.55);
+
+}
+
+.about-content{
+
+position:relative;
+
+z-index:5;
+
+color:white;
+
+max-width:800px;
+
+padding:20px;
+
+animation:fadeUp 1.2s;
+
+}
+
+.about-content span{
+
+letter-spacing:3px;
+
+color:#d4af37;
+
+font-weight:700;
+
+}
+
+.about-content h1{
+
+font-size:55px;
+
+margin:20px 0;
+
+line-height:1.2;
+
+}
+
+.about-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+.about-btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:14px 34px;
+
+background:#d4af37;
+
+color:black;
+
+text-decoration:none;
+
+border-radius:35px;
+
+font-weight:bold;
+
+transition:.4s;
+
+}
+
+.about-btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+/* COMPANY */
+
+.company-profile{
+
+padding:100px 20px;
+
+background:#fff;
+
+}
+
+.profile-container{
+
+max-width:1200px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+
+/* IMAGES */
+
+.profile-images{
+
+position:relative;
+
+height:520px;
+
+}
+
+.profile-images img{
+
+position:absolute;
+
+border-radius:18px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+transition:.5s;
+
+}
+
+.profile-images img:hover{
+
+transform:scale(1.05);
+
+}
+
+.img1{
+
+width:330px;
+
+top:0;
+
+left:0;
+
+}
+
+.img2{
+
+width:220px;
+
+bottom:0;
+
+left:40px;
+
+}
+
+.img3{
+
+width:250px;
+
+top:70px;
+
+right:0;
+
+}
+
+
+/* TEXT */
+
+.small-title{
+
+color:#d4af37;
+
+font-weight:bold;
+
+letter-spacing:2px;
+
+}
+
+.profile-text h2{
+
+font-size:42px;
+
+margin:20px 0;
+
+color:#123524;
+
+}
+
+.profile-text h2 span{
+
+color:#d4af37;
+
+}
+
+.profile-text p{
+
+line-height:1.9;
+
+color:#555;
+
+margin-bottom:20px;
+
+}
+
+
+/* FEATURES */
+
+.profile-features{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin:30px 0;
+
+}
+
+.feature{
+
+background:#f7faf7;
+
+padding:15px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.feature:hover{
+
+background:#123524;
+
+color:white;
+
+transform:translateY(-5px);
+
+}
+
+.feature i{
+
+color:#d4af37;
+
+margin-right:10px;
+
+}
+
+
+/* BUTTON */
+
+.profile-btn{
+
+display:inline-block;
+
+padding:14px 30px;
+
+background:#123524;
+
+color:white;
+
+border-radius:35px;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+.profile-btn:hover{
+
+background:#d4af37;
+
+color:black;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.profile-container{
+
+grid-template-columns:1fr;
+
+}
+
+.profile-images{
+
+height:400px;
+
+}
+
+.about-content h1{
+
+font-size:34px;
+
+}
+
+.profile-text h2{
+
+font-size:30px;
+
+}
+
+}
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-heading{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.section-heading span{
+
+color:#d4af37;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+font-size:13px;
+
+}
+
+.section-heading h2{
+
+font-size:42px;
+
+margin-top:15px;
+
+color:#123524;
+
+}
+
+.section-heading p{
+
+max-width:720px;
+
+margin:auto;
+
+line-height:1.8;
+
+color:#666;
+
+margin-top:15px;
+
+}
+
+
+
+/* =========================
+MISSION & VISION
+========================= */
+
+.mission-vision{
+
+padding:100px 20px;
+
+background:linear-gradient(135deg,#f8faf8,#eef7f2);
+
+}
+
+.mv-container{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:35px;
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+.mv-card{
+
+background:rgba(255,255,255,.75);
+
+backdrop-filter:blur(14px);
+
+padding:45px;
+
+border-radius:25px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+transition:.5s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.mv-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.mv-card::before{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+background:rgba(212,175,55,.12);
+
+border-radius:50%;
+
+right:-60px;
+
+top:-60px;
+
+}
+
+.mv-icon{
+
+width:80px;
+
+height:80px;
+
+background:#123524;
+
+color:#d4af37;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+margin-bottom:25px;
+
+}
+
+.mv-card h3{
+
+font-size:28px;
+
+color:#123524;
+
+margin-bottom:20px;
+
+}
+
+.mv-card p{
+
+line-height:1.9;
+
+color:#555;
+
+}
+
+
+
+/* =========================
+VALUES
+========================= */
+
+.values-section{
+
+padding:100px 20px;
+
+background:white;
+
+}
+
+.values-grid{
+
+max-width:1200px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.value-card{
+
+background:white;
+
+padding:40px 30px;
+
+text-align:center;
+
+border-radius:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.45s;
+
+border-top:5px solid transparent;
+
+}
+
+.value-card:hover{
+
+transform:translateY(-12px);
+
+border-top:5px solid #d4af37;
+
+}
+
+.value-icon{
+
+width:90px;
+
+height:90px;
+
+background:#123524;
+
+color:#d4af37;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:38px;
+
+margin-bottom:25px;
+
+transition:.4s;
+
+}
+
+.value-card:hover .value-icon{
+
+transform:rotate(360deg);
+
+}
+
+.value-card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+color:#123524;
+
+}
+
+.value-card p{
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+.mv-container{
+
+grid-template-columns:1fr;
+
+}
+
+.values-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-heading h2{
+
+font-size:32px;
+
+}
+
+}
+/* ==========================
+SUSTAINABILITY
+========================== */
+
+.sustainability{
+
+padding:100px 20px;
+
+background:#f7faf7;
+
+}
+
+.sustainability-container{
+
+max-width:1200px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.sustainability-image img{
+
+width:100%;
+
+border-radius:20px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+transition:.5s;
+
+}
+
+.sustainability-image img:hover{
+
+transform:scale(1.03);
+
+}
+
+.sustainability-content span{
+
+color:#d4af37;
+
+font-weight:bold;
+
+letter-spacing:2px;
+
+}
+
+.sustainability-content h2{
+
+font-size:42px;
+
+margin:20px 0;
+
+color:#123524;
+
+}
+
+.sustainability-content p{
+
+line-height:1.9;
+
+color:#555;
+
+margin-bottom:30px;
+
+}
+
+.sustainability-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.s-item{
+
+background:white;
+
+padding:20px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:.4s;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.s-item:hover{
+
+background:#123524;
+
+color:white;
+
+transform:translateY(-8px);
+
+}
+
+.s-item i{
+
+font-size:36px;
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+}
+
+/* ==========================
+FARMERS
+========================== */
+
+.farmers{
+
+position:relative;
+
+padding:120px 20px;
+
+background:url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600") center/cover;
+
+}
+
+.farmers-overlay{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(18,53,36,.82);
+
+}
+
+.farmers-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:1200px;
+
+margin:auto;
+
+text-align:center;
+
+color:white;
+
+}
+
+.farmers-content span{
+
+color:#d4af37;
+
+letter-spacing:2px;
+
+font-weight:bold;
+
+}
+
+.farmers-content h2{
+
+font-size:46px;
+
+margin:20px 0;
+
+}
+
+.farmers-content p{
+
+max-width:800px;
+
+margin:auto;
+
+line-height:1.9;
+
+margin-bottom:50px;
+
+}
+
+.farmer-cards{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.farmer-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+padding:35px;
+
+border-radius:20px;
+
+transition:.4s;
+
+}
+
+.farmer-card:hover{
+
+transform:translateY(-10px);
+
+background:rgba(255,255,255,.14);
+
+}
+
+.farmer-card i{
+
+font-size:45px;
+
+color:#d4af37;
+
+margin-bottom:20px;
+
+}
+
+/* ==========================
+ABOUT STATS
+========================== */
+
+.about-stats{
+
+padding:80px 20px;
+
+background:#123524;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.about-stat{
+
+text-align:center;
+
+color:white;
+
+}
+
+.about-stat h2{
+
+font-size:55px;
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.sustainability-container{
+
+grid-template-columns:1fr;
+
+}
+
+.farmer-cards{
+
+grid-template-columns:1fr;
+
+}
+
+.about-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.about-stats{
+
+grid-template-columns:1fr;
+
+}
+
+.sustainability-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.farmers-content h2{
+
+font-size:32px;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar transparent" id="navbar">
+<div class="logo-section">
+    <img src="gahl_logo-removebg-preview (1).png" alt="GAHL Logo">
+
+    <div class="company-text">
+        <h3>Global Agri Harvest Ltd</h3>
+     
+    </div>
+</div>
+
+    <nav id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+</header>
+<div class="tagline-bar">
+    <span>Rooted in Africa • Exporting Agricultural Produce • Global Quality Supply</span>
+</div>
+<!-- ABOUT HERO -->
+<section class="about-hero">
+
+    <div class="about-overlay"></div>
+
+    <div class="about-content">
+
+        <span>ABOUT GLOBAL AGRI HARVEST LTD</span>
+
+        <h1>
+            Rooted in Africa.<br>
+            Growing Global Partnerships.
+        </h1>
+
+        <p>
+            Delivering premium agricultural produce from Kenya to
+            international markets through quality, integrity and sustainability.
+        </p>
+
+        <a href="contact.html" class="about-btn">
+            Partner With Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- COMPANY PROFILE -->
+
+<section class="company-profile">
+
+<div class="profile-container">
+
+<div class="profile-images">
+
+<img src="https://i.pinimg.com/1200x/0a/ed/68/0aed68f5a61aebf3aebb16dbd8494e37.jpg" class="img1">
+
+<img src="https://i.pinimg.com/736x/15/a9/a2/15a9a2cb2215d50c6848e101d15a0705.jpg" class="img2">
+
+<img src="https://i.pinimg.com/1200x/de/9b/27/de9b27df9ff5dc7bab4bd8ebb5d9fd3a.jpg" class="img3">
+
+</div>
+
+
+<div class="profile-text">
+
+<span class="small-title">
+COMPANY PROFILE
+</span>
+
+<h2>
+
+Building Trust Through
+<span>Quality Agriculture</span>
+
+</h2>
+
+<p>
+
+Global Agri Harvest Ltd (GAHL) is a licensed Kenyan agricultural export company committed to supplying premium-quality horticultural products to international markets.
+
+</p>
+
+<p>
+
+We specialize in fresh culinary herbs while strategically expanding into spices, fruits, vegetables and value-added agricultural products. Through innovation, sustainability and strong farmer partnerships, we bridge Kenyan agriculture with buyers across Europe, the Middle East, Asia and other global markets.
+
+</p>
+
+<div class="profile-features">
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+Licensed Exporter
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+Premium Quality
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+Global Standards
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+Reliable Logistics
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+Farmer Partnerships
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+Traceability
+
+</div>
+
+</div>
+
+<a href="products.html" class="profile-btn">
+
+Explore Our Products
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+MISSION & VISION
+========================= -->
+
+<section class="mission-vision">
+
+    <div class="section-heading">
+
+        <span>OUR PURPOSE</span>
+
+        <h2>Driven by Purpose.<br>Inspired by Excellence.</h2>
+
+    </div>
+
+    <div class="mv-container">
+
+        <div class="mv-card mission">
+
+            <div class="mv-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+
+            <h3>Our Mission</h3>
+
+            <p>
+                To deliver premium agricultural produce from Kenya to global
+                markets through sustainable farming partnerships,
+                uncompromising quality standards, innovation and reliable
+                export solutions.
+            </p>
+
+        </div>
+
+        <div class="mv-card vision">
+
+            <div class="mv-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+
+            <h3>Our Vision</h3>
+
+            <p>
+                To become Africa's most trusted agricultural export partner by
+                connecting farmers to international markets through
+                sustainability, integrity and excellence.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+CORE VALUES
+========================= -->
+
+<section class="values-section">
+
+<div class="section-heading">
+
+<span>OUR VALUES</span>
+
+<h2>The Principles That Guide Us</h2>
+
+<p>
+
+Everything we do is anchored on strong values that inspire confidence,
+build lasting partnerships and create sustainable growth.
+
+</p>
+
+</div>
+
+<div class="values-grid">
+
+<div class="value-card">
+
+<div class="value-icon">
+
+<i class="fas fa-handshake"></i>
+
+</div>
+
+<h3>Integrity</h3>
+
+<p>
+
+We conduct every relationship with honesty, transparency and accountability.
+
+</p>
+
+</div>
+
+
+
+<div class="value-card">
+
+<div class="value-icon">
+
+<i class="fas fa-award"></i>
+
+</div>
+
+<h3>Excellence</h3>
+
+<p>
+
+We pursue excellence through continuous improvement, innovation and quality.
+
+</p>
+
+</div>
+
+
+
+<div class="value-card">
+
+<div class="value-icon">
+
+<i class="fas fa-users"></i>
+
+</div>
+
+<h3>Partnership</h3>
+
+<p>
+
+We believe long-term relationships create sustainable value for everyone.
+
+</p>
+
+</div>
+
+
+
+<div class="value-card">
+
+<div class="value-icon">
+
+<i class="fas fa-seedling"></i>
+
+</div>
+
+<h3>Sustainability</h3>
+
+<p>
+
+Protecting people, communities and the environment for future generations.
+
+</p>
+
+</div>
+
+
+
+<div class="value-card">
+
+<div class="value-icon">
+
+<i class="fas fa-globe-africa"></i>
+
+</div>
+
+<h3>Global Outlook</h3>
+
+<p>
+
+Meeting international standards while proudly showcasing Kenyan agriculture.
+
+</p>
+
+</div>
+
+
+
+<div class="value-card">
+
+<div class="value-icon">
+
+<i class="fas fa-leaf"></i>
+
+</div>
+
+<h3>Quality</h3>
+
+<p>
+
+Delivering safe, traceable and premium agricultural produce every time.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ======================================
+SUSTAINABILITY
+======================================= -->
+
+<section class="sustainability">
+
+<div class="sustainability-container">
+
+<div class="sustainability-image">
+
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=900" alt="Sustainable Farming">
+
+</div>
+
+<div class="sustainability-content">
+
+<span>SUSTAINABILITY</span>
+
+<h2>Growing Today.<br>Protecting Tomorrow.</h2>
+
+<p>
+
+At Global Agri Harvest Ltd, sustainability is at the heart of everything we do. We promote responsible farming practices, environmental stewardship, and ethical sourcing to ensure our agricultural exports benefit both present and future generations.
+
+</p>
+
+<div class="sustainability-grid">
+
+<div class="s-item">
+<i class="fas fa-seedling"></i>
+<h4>Responsible Farming</h4>
+</div>
+
+<div class="s-item">
+<i class="fas fa-tint"></i>
+<h4>Water Conservation</h4>
+</div>
+
+<div class="s-item">
+<i class="fas fa-recycle"></i>
+<h4>Waste Reduction</h4>
+</div>
+
+<div class="s-item">
+<i class="fas fa-leaf"></i>
+<h4>Global G.A.P Compliance</h4>
+</div>
+
+<div class="s-item">
+<i class="fas fa-globe"></i>
+<h4>Environmental Care</h4>
+</div>
+
+<div class="s-item">
+<i class="fas fa-hand-holding-heart"></i>
+<h4>Community Impact</h4>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================
+FARMER NETWORK
+======================================= -->
+
+<section class="farmers">
+
+<div class="farmers-overlay"></div>
+
+<div class="farmers-content">
+
+<span>OUR FARMER NETWORK</span>
+
+<h2>Growing Together With Kenyan Farmers</h2>
+
+<p>
+
+We believe farmers are our most valuable partners. Through training, technical support, quality assurance and long-term collaboration, we empower farming communities to consistently produce export-quality agricultural products.
+
+</p>
+
+<div class="farmer-cards">
+
+<div class="farmer-card">
+
+<i class="fas fa-users"></i>
+
+<h3>Contract Farming</h3>
+
+<p>
+
+Building reliable partnerships through structured farmer agreements.
+
+</p>
+
+</div>
+
+<div class="farmer-card">
+
+<i class="fas fa-chalkboard-teacher"></i>
+
+<h3>Training</h3>
+
+<p>
+
+Continuous capacity building on modern agricultural practices.
+
+</p>
+
+</div>
+
+<div class="farmer-card">
+
+<i class="fas fa-award"></i>
+
+<h3>Quality Standards</h3>
+
+<p>
+
+Supporting farmers to achieve export-grade quality and compliance.
+
+</p>
+
+</div>
+
+<div class="farmer-card">
+
+<i class="fas fa-truck"></i>
+
+<h3>Market Access</h3>
+
+<p>
+
+Connecting local farmers directly to international buyers.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================
+STATISTICS
+======================================= -->
+
+</section>
+<footer class="footer">
+
+    <!-- CURVED TOP -->
+<div class="footer-curve">
+    <svg viewBox="0 0 1440 100">
+        <path fill="#f5f5f5" d="M0,60 C400,0 1040,120 1440,60 L1440,0 L0,0 Z"></path>
+    </svg>
+</div>
+    <div class="footer-container">
+
+        <!-- COMPANY -->
+        <div class="footer-col">
+            <h3>Global Agri Harvest Ltd</h3>
+            <p>
+                Delivering premium agricultural exports from Kenya to global markets with reliability and excellence.
+            </p>
+
+            <!-- NEWSLETTER -->
+            <div class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><a href="tel:+254792474356">📞 +254 792 474 356</a></p>
+            <p><a href="mailto:info@gahl.co.ke">📧 info@gahl.co.ke</a></p>
+        </div>
+
+        <!-- OFFICE + MAP -->
+        <div class="footer-col">
+            <h4>Visit Us</h4>
+            <p>📍 Nairobi, Kenya</p>
+
+            <div class="map">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Nairobi%20Kenya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <a href="https://www.google.com/maps?q=Nairobi+Kenya" target="_blank" class="map-btn">
+                Get Directions →
+            </a>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Global Agri Harvest Ltd. All rights reserved.</p>
+    </div>
+
+</footer>
+<div class="chat-hint">Need help?</div>
+<!-- WHATSAPP -->
+ <br>
+ <br>
+<a href="#" class="whatsapp" onclick="openChat()">💬</a>
+<script>
+  let chatOpened = false;
+
+// OPEN ON SCROLL
+window.addEventListener("scroll", () => {
+    if (!chatOpened && window.scrollY > 300) {
+        chatOpened = true;
+        openChat();
+    }
+});
+
+// FALLBACK TIMER
+setTimeout(() => {
+    if (!chatOpened) {
+        chatOpened = true;
+        openChat();
+    }
+}, 8000);
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+const title = document.querySelector(".hero-content h1");
+const desc = document.querySelector(".hero-content p");
+
+function changeSlide() {
+    slides[index].classList.remove('active');
+
+    index = (index + 1) % slides.length;
+
+    slides[index].classList.add('active');
+
+    // 🔥 update text dynamically
+    title.style.opacity = 0;
+    desc.style.opacity = 0;
+
+    setTimeout(() => {
+        title.textContent = slides[index].dataset.title;
+        desc.textContent = slides[index].dataset.desc;
+
+        title.style.opacity = 1;
+        desc.style.opacity = 1;
+    }, 300);
+}
+
+setInterval(changeSlide, 4000);
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+const navbar = document.getElementById("navbar");
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+
+
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    menuToggle.classList.toggle("active");
+});
+
+/* ACTIVE LINK HIGHLIGHT */
+let links = document.querySelectorAll("nav a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        links.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+    });
+});
+// IMAGE CLICK TO FULLSCREEN
+const images = document.querySelectorAll(".about-images img");
+const viewer = document.getElementById("imageViewer");
+const viewerImg = document.getElementById("viewerImg");
+const closeBtn = document.getElementById("closeViewer");
+
+images.forEach(img => {
+    img.addEventListener("click", () => {
+        viewer.style.display = "flex";
+        viewerImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    viewer.style.display = "none";
+});
+
+// CLICK OUTSIDE TO CLOSE
+viewer.addEventListener("click", (e) => {
+    if (e.target !== viewerImg) {
+        viewer.style.display = "none";
+    }
+});
+</script>
+<script>
+function openChat() {
+    if (window.Tawk_API) {
+        Tawk_API.maximize();
+    } else {
+        setTimeout(openChat, 500);
+    }
+}
+</script>
+
+<!-- TAWK SCRIPT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),
+s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69f136c45b43a41c341c478f/1jnb3rsn5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
+
+
+</script>
+</body>
+</html>
